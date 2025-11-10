@@ -1,0 +1,27 @@
+{
+  "model_name": "microsoft/codebert-base",
+  "max_length": 512,
+  "batch_size": 16,
+  "num_classes_binary": 2,
+  "num_classes_multiclass": 8,
+  "label_encoder_classes": [
+    "Overflow-Underflow",
+    "Re-entrancy",
+    "SAFE",
+    "TOD",
+    "Timestamp-Dependency",
+    "Unchecked-Send",
+    "Unhandled-Exceptions",
+    "tx.origin"
+  ],
+  "dataset_sizes": {
+    "train": 10032,
+    "validation": 3344,
+    "test": 3344
+  },
+  "class_distribution": {
+    "train_vulnerable_rate": 0.05911084529505582,
+    "val_vulnerable_rate": 0.049342105263157895,
+    "test_vulnerable_rate": 0.06279904306220095
+  }
+}

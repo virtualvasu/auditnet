@@ -1,0 +1,175 @@
+# Smart Contract Vulnerability Detector - .gitignore
+
+# Virtual Environments
+venv/
+env/
+ENV/
+.env
+.venv/
+.ENV/
+env.bak/
+venv.bak/
+pyvenv.cfg
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+*.pyc
+*.pyo
+*.pyd
+
+# Jupyter Notebook
+.ipynb_checkpoints
+*/.ipynb_checkpoints/*
+profile_default/
+ipython_config.py
+
+# PyTorch
+*.pth
+*.pt
+*.bin
+*.safetensors
+
+# Large model files (but keep structure)
+models/*.pt
+models/*.pth
+models/*.bin
+models/*.safetensors
+results/checkpoints/*.pt
+results/checkpoints/*.pth
+
+# Data files (keep structure but ignore large datasets)
+dataset/buggy_contracts/*/*.sol
+dataset/buggy_contracts/*/*.csv
+dataset/results/*/*
+data/raw/*
+data/external/*
+*.csv
+!data/processed/.gitkeep
+!dataset/.gitkeep
+
+# Logs and temporary files
+logs/*.log
+logs/*.txt
+*.log
+*.tmp
+*.temp
+.DS_Store
+Thumbs.db
+
+# IDE and Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Large output files
+outputs/*.txt
+outputs/*.json
+results/visualizations/*.png
+results/visualizations/*.pdf
+results/visualizations/*.html
+results/metrics/*.json
+results/metrics/*.csv
+results/predictions/*.csv
+
+# Temporary analysis files
+*.analysis
+*.report
+slither_results/
+mythril_results/
+
+# Environment variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Coverage reports
+htmlcov/
+.coverage
+.coverage.*
+coverage.xml
+*.cover
+.hypothesis/
+.pytest_cache/
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Documentation builds
+docs/_build/
+.readthedocs.yml
+
+# GPU cache
+.nv_cache/
+
+# Hugging Face cache (optional - uncomment if you want to exclude)
+# ~/.cache/huggingface/
+
+# MLflow (if used)
+mlruns/
+mlflow.db
+
+# Weights & Biases (if used)
+wandb/
+
+# TensorBoard logs
+runs/
+tb_logs/
+
+# Large binary files
+*.pickle
+*.pkl
+*.joblib
+
+# Backup files
+*.bak
+*.backup
+
+# Compressed files
+*.zip
+*.tar.gz
+*.rar
+*.7z
+
+# Keep directory structure with .gitkeep files
+!.gitkeep
+!*/.gitkeep
+
+# Specific project files to ignore
+ML_SOP_VasuGarg.pdf
