@@ -1,0 +1,105 @@
+{
+  "comparison_metrics": [
+    {
+      "tool": "Our Model (CodeBERT)",
+      "n_predictions": 3344,
+      "accuracy": 0.9536483253588517,
+      "precision": 0.591304347826087,
+      "recall": 0.38636363636363635,
+      "f1": 0.46735395189003437,
+      "true_positives": 68,
+      "false_positives": 47,
+      "true_negatives": 3121,
+      "false_negatives": 108
+    },
+    {
+      "tool": "Slither",
+      "n_predictions": 3344,
+      "accuracy": 0.8764952153110048,
+      "precision": 0.11147540983606558,
+      "recall": 0.19318181818181818,
+      "f1": 0.14137214137214138,
+      "true_positives": 34,
+      "false_positives": 271,
+      "true_negatives": 2897,
+      "false_negatives": 142
+    },
+    {
+      "tool": "Mythril",
+      "n_predictions": 3344,
+      "accuracy": 0.8989234449760766,
+      "precision": 0.15677966101694915,
+      "recall": 0.21022727272727273,
+      "f1": 0.1796116504854369,
+      "true_positives": 37,
+      "false_positives": 199,
+      "true_negatives": 2969,
+      "false_negatives": 139
+    }
+  ],
+  "benchmark_dataset_summary": {
+    "total_functions": 3344,
+    "vulnerability_rate": 0.05263157894736842,
+    "contracts_analyzed": 50,
+    "vulnerability_categories": [
+      "tx.origin",
+      "Timestamp-Dependency",
+      "Overflow-Underflow",
+      "Unhandled-Exceptions",
+      "TOD",
+      "Unchecked-Send",
+      "Re-entrancy"
+    ]
+  },
+  "category_breakdown": {
+    "tx.origin": {
+      "total_functions": 438,
+      "total_vulnerabilities": 23,
+      "our_model_detected": 14,
+      "slither_detected": 7,
+      "mythril_detected": 5
+    },
+    "Timestamp-Dependency": {
+      "total_functions": 397,
+      "total_vulnerabilities": 24,
+      "our_model_detected": 11,
+      "slither_detected": 4,
+      "mythril_detected": 6
+    },
+    "Overflow-Underflow": {
+      "total_functions": 498,
+      "total_vulnerabilities": 26,
+      "our_model_detected": 8,
+      "slither_detected": 7,
+      "mythril_detected": 11
+    },
+    "Unhandled-Exceptions": {
+      "total_functions": 444,
+      "total_vulnerabilities": 26,
+      "our_model_detected": 8,
+      "slither_detected": 4,
+      "mythril_detected": 4
+    },
+    "TOD": {
+      "total_functions": 704,
+      "total_vulnerabilities": 41,
+      "our_model_detected": 12,
+      "slither_detected": 1,
+      "mythril_detected": 2
+    },
+    "Unchecked-Send": {
+      "total_functions": 424,
+      "total_vulnerabilities": 17,
+      "our_model_detected": 6,
+      "slither_detected": 5,
+      "mythril_detected": 4
+    },
+    "Re-entrancy": {
+      "total_functions": 439,
+      "total_vulnerabilities": 19,
+      "our_model_detected": 9,
+      "slither_detected": 6,
+      "mythril_detected": 5
+    }
+  }
+}
