@@ -1,14 +1,14 @@
 
 # Smart Contract Vulnerability Detection Benchmark Report
 
-Generated on: 2025-11-11 01:51:53
+Generated on: 2025-11-16 00:38:51
 
 ## Executive Summary
 
 This report compares the performance of our CodeBERT-based vulnerability detection model against traditional static analysis tools (Slither and Mythril) on a test set of Solidity smart contract functions.
 
 ### Dataset Overview
-- Total test functions analyzed: 554
+- Total test functions analyzed: 612
 - Ground truth vulnerability rate: 7.2%
 - Vulnerability categories covered: 7 types
 
@@ -18,25 +18,25 @@ This report compares the performance of our CodeBERT-based vulnerability detecti
 ### Performance Metrics
 
                 tool  n_predictions  accuracy  precision  recall    f1  true_positives  false_positives  true_negatives  false_negatives
-Our Model (CodeBERT)            554     0.942        0.7    0.35 0.467              14                6             508               26
-             Slither            554     0.928        0.0    0.00 0.000               0                0             514               40
-             Mythril            554     0.928        0.0    0.00 0.000               0                0             514               40
+Our Model (CodeBERT)            612     0.933      0.588   0.227 0.328              10                7             561               34
+             Slither            612     0.928      0.000   0.000 0.000               0                0             568               44
+             Mythril            612     0.928      0.000   0.000 0.000               0                0             568               44
 
 
 ### Key Findings
 
-- Best F1 Score: Our Model (CodeBERT) with 0.467
-- Highest Precision: Our Model (CodeBERT) with 0.700
-- Highest Recall: Our Model (CodeBERT) with 0.350
-- Our Model (CodeBERT) Coverage: 100.0% (554/554 functions)
-- Slither Coverage: 100.0% (554/554 functions)
-- Mythril Coverage: 100.0% (554/554 functions)
+- Best F1 Score: Our Model (CodeBERT) with 0.328
+- Highest Precision: Our Model (CodeBERT) with 0.588
+- Highest Recall: Our Model (CodeBERT) with 0.227
+- Our Model (CodeBERT) Coverage: 100.0% (612/612 functions)
+- Slither Coverage: 100.0% (612/612 functions)
+- Mythril Coverage: 100.0% (612/612 functions)
 
 ### Tool Agreement Analysis
 
-- Our Model vs Slither: 96.4% agreement (554 overlapping predictions)
-- Our Model vs Mythril: 96.4% agreement (554 overlapping predictions)
-- Slither vs Mythril: 100.0% agreement (554 overlapping predictions)
+- Our Model vs Slither: 97.2% agreement (612 overlapping predictions)
+- Our Model vs Mythril: 97.2% agreement (612 overlapping predictions)
+- Slither vs Mythril: 100.0% agreement (612 overlapping predictions)
 
 
 ## Methodology Notes
