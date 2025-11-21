@@ -197,11 +197,6 @@ If you use this code in your research, please cite:
 }
 ```
 
-## 📞 Contact
-
-- Author: Your Name
-- Email: your.email@example.com
-- Project Link: [https://github.com/yourusername/smart-contract-vuln-detector](https://github.com/yourusername/smart-contract-vuln-detector)
 
 ## 🙏 Acknowledgments
 
