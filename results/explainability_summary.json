@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-11-11T01:28:50.234793",
+  "timestamp": "2025-11-16T00:20:39.592106",
   "model_path": "/home/netweb/vasu/smart-contract-vuln-detector/results/checkpoints/best_model_codebert_binary_20251111_002909.pt",
   "configuration": {
     "attention_layer": -1,
