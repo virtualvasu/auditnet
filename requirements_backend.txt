@@ -1,0 +1,25 @@
+# Smart Contract Vulnerability Detector - Backend Only Requirements
+# Python 3.8+
+# For minimal backend API deployment
+
+# Core Data Science
+numpy>=1.24.0
+pandas>=2.0.0
+
+# Deep Learning
+torch>=2.0.0
+transformers>=4.30.0
+tokenizers>=0.13.0
+
+# Web Framework (FastAPI)
+fastapi>=0.109.0
+uvicorn[standard]>=0.27.0
+pydantic>=2.5.0
+
+# API Client Testing
+requests>=2.31.0
+
+# Utilities
+tqdm>=4.65.0
+python-dotenv>=1.0.0
+pyyaml>=6.0

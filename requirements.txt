@@ -24,6 +24,12 @@ accelerate>=0.20.0
 tqdm>=4.65.0
 requests>=2.31.0
 
+# Web Framework and API
+fastapi>=0.109.0
+uvicorn>=0.27.0
+pydantic>=2.5.0
+pydantic-settings>=2.1.0
+
 # Jupyter and Notebook support
 jupyter>=1.0.0
 jupyterlab>=4.0.0
@@ -62,9 +68,6 @@ python-dotenv>=1.0.0
 
 # JSON handling (usually included in Python, but explicit for clarity)
 jsonlines>=3.1.0
-
-# Warnings and compatibility
-warnings-as-errors>=1.0.0
 
 # Optional: GPU memory management
 gpustat>=1.0.0  # For GPU monitoring

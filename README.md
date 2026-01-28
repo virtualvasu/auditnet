@@ -318,14 +318,47 @@ Overall Risk Score: HIGH (0.83/1.00)
 Recommended Action: Manual review required
 ```
 
-4. **Install additional tools (optional):**
-```bash
-# For Slither analysis
-pip install slither-analyzer
+---
 
-# For Mythril analysis
-pip install mythril
+## 🔌 Run Backend API
+
+### **Step 1: Create Virtual Environment**
+```bash
+python3 -m venv venv
 ```
+
+### **Step 2: Activate Virtual Environment**
+```bash
+source venv/bin/activate
+```
+
+### **Step 3: Install Dependencies**
+```bash
+pip install --upgrade pip
+pip install fastapi uvicorn pydantic torch transformers
+```
+
+### **Step 4: Start the API Server**
+```bash
+python -m uvicorn backend.app:app --host 0.0.0.0 --port 8000 --reload
+```
+
+You should see:
+```
+INFO:     Uvicorn running on http://0.0.0.0:8000
+INFO:     Application startup complete
+```
+
+### **Access API Documentation**
+Open browser: **http://localhost:8000/docs**
+
+### **Test the API (New Terminal)**
+```bash
+source venv/bin/activate
+python test_backend.py
+```
+
+---
 
 ## 📊 Dataset Structure
 
