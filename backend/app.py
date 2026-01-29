@@ -166,9 +166,9 @@ def predict_vulnerability(function_code: str) -> dict:
         raise
 
 
-def analyze_contract(code: str, contract_name: str = "Unknown") -> dict:
+def _analyze_contract_impl(code: str, contract_name: str = "Unknown") -> dict:
     """
-    Analyze entire contract for vulnerabilities
+    Analyze entire contract for vulnerabilities (internal implementation)
     
     Args:
         code: Solidity contract code
@@ -387,7 +387,7 @@ async def analyze_contract(request: AnalyzeRequest):
             )
         
         # Analyze contract
-        results = analyze_contract(request.code, request.contract_name or "Unknown")
+        results = _analyze_contract_impl(request.code, request.contract_name or "Unknown")
         
         # Build response
         function_analyses = []
