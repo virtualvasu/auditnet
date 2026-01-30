@@ -3,7 +3,7 @@
 
 <div align="center">
 
-**Advanced Machine Learning System for Solidity Smart Contract Security Analysis**
+**Machine Learning System for Solidity Smart Contract Security Analysis**
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
@@ -13,6 +13,11 @@
 *Developed by **Vasu Garg**, IIT Bhilai*
 
 </div>
+
+## Live Demo
+
+- **Backend API (Swagger Documentation)**: [http://20.193.248.57:8000/docs](http://20.193.248.57:8000/docs)
+- **Frontend Application (AuditNet)**: [http://20.193.248.57:3000](http://20.193.248.57:3000)
 
 ---
 
@@ -34,23 +39,23 @@
 
 ## Project Overview
 
-**Audit Net** is a **state-of-the-art machine learning system** for detecting security vulnerabilities in Solidity smart contracts. Built using advanced deep learning techniques including **CodeBERT transformers**, **BiLSTM networks**, and **multi-kernel CNNs**, the system achieves **92.8% accuracy** with only **2.6% false positive rate**.
+**Audit Net** is a machine learning system for detecting security vulnerabilities in Solidity smart contracts. The system uses deep learning techniques including **CodeBERT transformers**, **BiLSTM networks**, and **multi-kernel CNNs**, achieving **92.8% accuracy** with **2.6% false positive rate**.
 
-### Key Achievements
+### Key Features
 
-- **Outperforms traditional tools** by **160-231%** in F1-score compared to Slither and Mythril
-- **Detects 7 major vulnerability types** with high precision and recall
+- **Higher performance** than traditional tools with **160-231%** improvement in F1-score compared to Slither and Mythril
+- **Detects 7 major vulnerability types** with detailed precision and recall metrics
 - **Provides explainability** through attention visualization and token-level analysis
 - **Ensemble learning approach** with neural stacking achieving **92.3% AUC**
 - **Comprehensive evaluation** on SolidiFI benchmark with 16,720 functions
 
 ---
 
-## Novel Contributions
+## Key Contributions
 
 ### **Multi-Model Deep Learning Pipeline**
 - Three specialized architectures: **CodeBERT**, **BiLSTM**, and **TextCNN**
-- Advanced ensemble methods: weighted voting, neural stacking, and attention-based fusion
+- Ensemble methods: weighted voting, neural stacking, and attention-based fusion
 - Function-level vulnerability detection with AST-based preprocessing
 
 ### **Attention-Based Explainability**
@@ -61,9 +66,9 @@
 ### **Comprehensive Benchmarking**
 - Systematic comparison against Slither and Mythril static analyzers
 - Extensive ablation studies validating architectural choices
-- Reproducible pipeline with full documentation and code
+- Reproducible pipeline with documentation and code
 
-### **Advanced Training Techniques**
+### **Training Techniques**
 - Mixed precision training with gradient clipping
 - Class imbalance handling through strategic weighting
 - F1-optimized threshold tuning for production deployment
@@ -97,7 +102,7 @@ graph TD
 - **16,720 functions** extracted with vulnerability labels
 - **Binary classification** (safe/vulnerable) + **8-class categorization**
 
-### Stage 2: **Advanced Tokenization**
+### Stage 2: **Tokenization**
 - **CodeBERT BPE tokenization** with 512-token maximum length
 - Generation of `input_ids` and `attention_masks`
 - Padding and truncation strategies optimized for code analysis
@@ -234,8 +239,8 @@ Test Set:       20% (3,344 functions)
 | Tool | F1-Score | Improvement | Analysis Type |
 |------|----------|-------------|---------------|
 | **Our Best Model** | **59.4%** | - | Deep Learning |
-| **Mythril** | 18.0% | **+230%** ⬆️ | Static Analysis |
-| **Slither** | 14.1% | **+321%** ⬆️ | Static Analysis |
+| **Mythril** | 18.0% | **+230%** | Static Analysis |
+| **Slither** | 14.1% | **+321%** | Static Analysis |
 
 ### **Detailed Performance Metrics**
 
@@ -262,7 +267,7 @@ Neural Stacking (Best Overall):
 
 ### **Attention Visualization**
 
-Our system provides **token-level explainability** through advanced attention analysis:
+The system provides **token-level explainability** through attention analysis:
 
 **Key Findings**:
 - **Vulnerable code** receives ~10% higher attention scores than safe code
@@ -271,7 +276,7 @@ Our system provides **token-level explainability** through advanced attention an
 
 ### **Vulnerability Pattern Detection**
 
-The model automatically identifies suspicious patterns:
+The model identifies suspicious patterns:
 
 | Pattern Type | Examples | Attention Score |
 |-------------|----------|----------------|
@@ -319,9 +324,11 @@ pip install -r requirements.txt
 python -m uvicorn backend.app:app --host 0.0.0.0 --port 8000 --reload
 ```
 
-5. **Access the API**
+5. **Access the Application**
    - **API Documentation**: http://localhost:8000/docs
    - **Frontend Application**: http://localhost:3000 (if running)
+   - **Live Demo Backend**: [http://20.193.248.57:8000/docs](http://20.193.248.57:8000/docs)
+   - **Live Demo Frontend**: [http://20.193.248.57:3000](http://20.193.248.57:3000)
 
 ### **Frontend Setup (Optional)**
 
@@ -363,7 +370,7 @@ Execute the notebooks in **sequential order** for complete pipeline:
 | `06_attention_visualization.ipynb` | Explainability analysis | Attention heatmaps |
 | `07_benchmark_vs_slither_mythril.ipynb` | Comparative analysis | Benchmark results |
 
-### **Advanced Training Configuration**
+### **Training Configuration**
 
 #### **CodeBERT Fine-tuning Parameters**
 
