@@ -1,4 +1,5 @@
-# Smart Contract Vulnerability Detector
+# Audit Net
+## Smart Contract Vulnerability Detector
 
 <div align="center">
 
@@ -25,14 +26,15 @@
 - [Model Architectures](#model-architectures)
 - [Performance Results](#performance-results)
 - [Explainability Features](#explainability-features)
-- [Installation & Setup](#installation--setup)
+- [Quick Start](#quick-start)
+- [System Requirements](#system-requirements)
 - [Technical Deep Dive](#technical-deep-dive)
 
 ---
 
 ## Project Overview
 
-This project presents a **state-of-the-art machine learning system** for detecting security vulnerabilities in Solidity smart contracts. Built using advanced deep learning techniques including **CodeBERT transformers**, **BiLSTM networks**, and **multi-kernel CNNs**, the system achieves **92.8% accuracy** with only **2.6% false positive rate**.
+**Audit Net** is a **state-of-the-art machine learning system** for detecting security vulnerabilities in Solidity smart contracts. Built using advanced deep learning techniques including **CodeBERT transformers**, **BiLSTM networks**, and **multi-kernel CNNs**, the system achieves **92.8% accuracy** with only **2.6% false positive rate**.
 
 ### Key Achievements
 
@@ -289,150 +291,58 @@ Generate HTML visualizations showing:
 
 ---
 
-## 🚀 Quick Start
+## Quick Start
 
-### ⚡ **30-Second Demo**
+### **Backend API Setup**
 
+1. **Clone the repository**
 ```bash
-# Clone and setup
-git clone https://github.com/virtualvasu/smart-contract-vuln-detector.git
-cd smart-contract-vuln-detector
-pip install -r requirements.txt
-
-# Run analysis on sample contract
-python analyze_contract.py --file examples/sample_contract.sol --model ensemble
+git clone https://github.com/virtualvasu/audit-net.git
+cd audit-net
 ```
 
-### **Expected Output**
-```
-🛡️ Vulnerability Analysis Results
-================================
-Contract: sample_contract.sol
-Model: Neural Stacking Ensemble
-
-Vulnerabilities Detected: 2
-├── Reentrancy (Line 45-52): Confidence 89.3%
-└── Unchecked Send (Line 67): Confidence 76.8%
-
-Overall Risk Score: HIGH (0.83/1.00)
-Recommended Action: Manual review required
-```
-
----
-
-## 🔌 Run Backend API
-
-### **Step 1: Create Virtual Environment**
+2. **Create and activate virtual environment**
 ```bash
 python3 -m venv venv
+source venv/bin/activate  # Linux/Mac
+# venv\Scripts\activate  # Windows
 ```
 
-### **Step 2: Activate Virtual Environment**
-```bash
-source venv/bin/activate
-```
-
-### **Step 3: Install Dependencies**
+3. **Install dependencies**
 ```bash
 pip install --upgrade pip
-pip install fastapi uvicorn pydantic torch transformers
+pip install -r requirements.txt
 ```
 
-### **Step 4: Start the API Server**
+4. **Start the API server**
 ```bash
 python -m uvicorn backend.app:app --host 0.0.0.0 --port 8000 --reload
 ```
 
-You should see:
-```
-INFO:     Uvicorn running on http://0.0.0.0:8000
-INFO:     Application startup complete
-```
+5. **Access the API**
+   - **API Documentation**: http://localhost:8000/docs
+   - **Frontend Application**: http://localhost:3000 (if running)
 
-### **Access API Documentation**
-Open browser: **http://localhost:8000/docs**
+### **Frontend Setup (Optional)**
 
-### **Test the API (New Terminal)**
 ```bash
-source venv/bin/activate
-python test_backend.py
+cd frontend
+npm install
+npm run dev
 ```
+
+
 
 ---
 
-## 📊 Dataset Structure
-
-```
-dataset/
-├── buggy_contracts/
-│   ├── Overflow-Underflow/
-│   ├── Re-entrancy/
-│   ├── Timestamp-Dependency/
-│   ├── TOD/
-│   ├── tx.origin/
-│   ├── Unchecked-Send/
-│   └── Unhandled-Exceptions/
-└── results/
-    ├── Slither/
-    ├── Mythril/
-    └── ...
-```
-
----
-
-## 🛠️ Installation & Setup
-
-### **Prerequisites**
+## System Requirements
 
 | Requirement | Version | Purpose |
 |------------|---------|---------|
 | **Python** | 3.8+ | Core runtime environment |
 | **PyTorch** | 2.0+ | Deep learning framework |
-| **CUDA** | 11.8+ (optional) | GPU acceleration |
-| **Memory** | 8GB+ RAM | Model training and inference |
-| **Storage** | 10GB+ free | Dataset and model storage |
-
-### **Quick Installation**
-
-```bash
-# 1. Clone the repository
-git clone https://github.com/virtualvasu/smart-contract-vuln-detector.git
-cd smart-contract-vuln-detector
-
-# 2. Create virtual environment
-python -m venv venv
-source venv/bin/activate  # Linux/Mac
-# venv\Scripts\activate  # Windows
-
-# 3. Install dependencies
-pip install -r requirements.txt
-
-# 4. Run setup script
-chmod +x setup.sh
-./setup.sh
-
-# 5. Verify installation
-python -c "import torch; print('✅ PyTorch installed:', torch.__version__)"
-python -c "from transformers import AutoTokenizer; print('✅ Transformers ready')"
-```
-
-### **Development Setup**
-
-For contributors and researchers:
-
-```bash
-# Install development dependencies
-pip install -r requirements-dev.txt
-
-# Setup pre-commit hooks
-pre-commit install
-
-# Run tests
-pytest tests/ --cov=src/
-
-# Start Jupyter Lab
-jupyter lab notebooks/
-```
+| **Memory** | 4GB+ RAM | Model inference |
+| **Storage** | 2GB+ free | Models and dependencies |
 
 ---
 
